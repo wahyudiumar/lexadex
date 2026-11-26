@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,17 +11,6 @@ import { SunIcon } from "./icons/SunIcon";
 
 export function NavbarComponent() {
   const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return (
-      <button type="button" className="w-5 h-5" aria-label="Loading theme" />
-    );
-  }
 
   return (
     <header
