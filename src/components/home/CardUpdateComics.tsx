@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export function CardNewComics() {
+export function CardUpdateComics() {
   return (
     <>
       <Link href="" className="w-full">
@@ -14,21 +14,23 @@ export function CardNewComics() {
           />
         </div>
         <div className="mt-2 text-center">
-          <h4 className="font-bold text-neutral-300">
+          <h4 className="font-bold dark:text-neutral-300">
             Koori no Jouheki (Book Version)
           </h4>
 
           <div className="text-start flex flex-col-reverse mt-3 gap-y-2">
             <Link
               href=""
-              className="py-1.5 px-3 rounded-md text-sm text-start flex  items-center justify-between bg-neutral-800"
+              className="py-1.5 px-3 rounded-md text-sm text-start flex  items-center justify-between bg-neutral-300 dark:bg-neutral-800"
             >
               <p>Chapter 1</p>
-              <span className="text-[11px] text-neutral-400">1 hours</span>
+              <span className="text-[11px] text-neutral-700 dark:text-neutral-400">
+                1 hours
+              </span>
             </Link>
             <Link
               href=""
-              className="py-1.5 px-3 rounded-md text-sm bg-neutral-800 flex justify-between items-center"
+              className="py-1.5 px-3 rounded-md text-sm bg-neutral-300 dark:bg-neutral-800 flex justify-between items-center"
             >
               <div className="flex gap-x-1.5">
                 <p>Chapter 2</p>
@@ -37,7 +39,9 @@ export function CardNewComics() {
                 </span>
               </div>
 
-              <span className="text-[11px] text-neutral-400">1 hours</span>
+              <span className="text-[11px] text-neutral-700 dark:text-neutral-400">
+                1 hours
+              </span>
             </Link>
           </div>
         </div>

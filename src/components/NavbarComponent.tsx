@@ -3,7 +3,8 @@ import Link from "next/link";
 
 import { useTheme } from "next-themes";
 
-import LexadexLightImage from "@public/lexadex-light.png";
+import LogoDarkImage from "@public/lexadex-dark.png";
+import LogoLightImage from "@public/lexadex-light.png";
 
 import { MoonIcon } from "./icons/MoonIcon";
 import { SearchIcon } from "./icons/SearchIcon";
@@ -18,7 +19,11 @@ export function NavbarComponent() {
     >
       <div className="flex items-center justify-between h-full px-40 my-auto">
         <div className="flex items-center gap-x-20">
-          <Image src={LexadexLightImage} alt="Logo App" className="w-48" />
+          {resolvedTheme === "dark" ? (
+            <Image src={LogoLightImage} alt="Logo App" className="w-48" />
+          ) : (
+            <Image src={LogoDarkImage} alt="Logo App" className="w-48" />
+          )}
 
           <ul className="flex gap-x-10">
             <li>
