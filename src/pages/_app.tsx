@@ -1,13 +1,16 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "@hooks/useDarkMode";
+import { useResize } from "@hooks/useResize";
 
 import { useEffect, useState } from "react";
 
-import { NavbarComponent } from "@components/NavbarComponent";
+import { NavbarComponent } from "@components/Navbar/NavbarComponent";
+import { NavbarBottom } from "@components/Navbar/NavbarBottom";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [mounted, setMounted] = useState(false);
+  const resize = useResize();
 
   useEffect(() => {
     setMounted(true);
@@ -27,6 +30,8 @@ export default function App({ Component, pageProps }: AppProps) {
     >
       <NavbarComponent />
       <Component {...pageProps} />
+
+      {resize === null ? null : resize < 1024 && <NavbarBottom />}
     </ThemeProvider>
   );
 }
